@@ -8,16 +8,28 @@
 </head>
 <body>
 
-    <div ng-app="app">
-        <div ng-controller="ContactController">
-            Hello, {{ name }}!
-        </div>
-    </div>
+  <div ng-app="app">
+      <div ng-controller="ContactController as contact">
+          <p>
+            My name is {{ contact.name }}.
+          </p>
+          <p>
+            Email - {{ contact.email }}<br>
+            Phone - {{ contact.phone }}
+          </p>
 
-    <script src="js/angular.js"></script>
-    <script src="js/app/app.js"></script>
-    <script src="js/app/controllers/ContactController.js"></script>
-    <script src="js/app/controllers/StaffController.js"></script>
+          <div ng-controller="StaffController as staff">
+            <p>
+              My coworker's name is {{ staff.name }}. He can be reached by phone -  {{ staff.phone }} or by email - {{ staff.email }}.
+            </p>
+          </div>
+      </div>
+  </div>
+
+  <script src="js/angular.js"></script>
+  <script src="js/app/app.js"></script>
+  <script src="js/app/controllers/ContactController.js"></script>
+  <script src="js/app/controllers/StaffController.js"></script>
 
 </body>
 </html>
